@@ -13,7 +13,11 @@ public class SimuladorVotacion {
     // TODO: DEV 1 - Registrar votos del Candidato A
     // Requisitos: Crear una función que sume o registre votos para el Candidato A.
     // ==========================================
-    
+
+    public static void registrarVotoCandidatoA(int cantidad) {
+        votosCandidatoA += cantidad;
+        System.out.println("Se registraron: " + votosCandidatoA + "votos para el candidato A");
+    }
 
     // ==========================================
     // TODO: DEV 2 - Registrar votos del Candidato B
@@ -70,7 +74,7 @@ public class SimuladorVotacion {
                     System.out.print("Ingrese cantidad de votos para Candidato A: ");
                     int votosA = scanner.nextInt();
                     // LLAMAR AQUÍ A LA FUNCIÓN REGISTRAR VOTOS CANDIDATO A
-                    
+                    registrarVotoCandidatoA(votosA);
                     break;
                 case 2:
                     System.out.print("Ingrese cantidad de votos para Candidato B: ");
