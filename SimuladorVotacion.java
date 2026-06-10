@@ -1,4 +1,6 @@
 import java.util.Scanner;
+int votosA = 0;
+int  votosB = 0;
 
 /**
  * Simulador de Votación Simple - Programa CLI para procesar votos.
@@ -80,6 +82,20 @@ public class SimuladorVotacion {
                     break;
                 case 3:
                     // LLAMAR AQUÍ A LA FUNCIÓN CALCULAR PORCENTAJES
+                    int totalVotos = votosA + votosB;
+
+                    if (totalVotos == 0) {
+                        System.out.println("  No hay votos registrados todavía.");
+                        return;
+                    }
+
+                    double porcentajeA = (votosA * 100.0) / totalVotos;
+                    double porcentajeB = (votosB * 100.0) / totalVotos;
+
+                    System.out.println("\n--- Porcentajes de Votación ---");
+                    System.out.printf("Porcentaje Candidato A: %.2f%%\n", porcentajeA);
+                    System.out.printf("Porcentaje Candidato B: %.2f%%\n", porcentajeB);
+                    System.out.println("Total de votos: " + totalVotos);
 
                     break;
                 case 4:
