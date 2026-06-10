@@ -18,10 +18,13 @@ public class SimuladorVotacion {
     // ==========================================
     // TODO: DEV 2 - Registrar votos del Candidato B
     // Requisitos: Crear una función que sume o registre votos para el Candidato B.
+    // ======================================
+    public static void registrarVotoCandidatoB(int cantidad) {
+        votosCandidatoB += cantidad;
+        System.out.println("se registraron: " + votoscandidatoB + "votos para el candidato B");
+    }
     // ==========================================
-    
 
-    // ==========================================
     // TODO: DEV 3 - Calcular porcentajes
     // Requisitos: Crear una función que calcule y muestre el porcentaje de votos 
     // obtenido por cada candidato sobre el total de votos emitidos.
@@ -76,6 +79,7 @@ public class SimuladorVotacion {
                     System.out.print("Ingrese cantidad de votos para Candidato B: ");
                     int votosB = scanner.nextInt();
                     // LLAMAR AQUÍ A LA FUNCIÓN REGISTRAR VOTOS CANDIDATO B
+                    registrarVotoCandidatoB(votosB);
 
                     break;
                 case 3:
