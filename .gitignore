@@ -1,3 +1,6 @@
+.idea
+simulador_votacion_simple.iml
+=======
 *.class
 *.jar
 *.war
