@@ -1,2 +1,12 @@
 .idea
 simulador_votacion_simple.iml
+=======
+*.class
+*.jar
+*.war
+*.log
+*.iml
+.idea/
+.DS_Store
+build/
+target/
