@@ -13,15 +13,22 @@ public class SimuladorVotacion {
     // TODO: DEV 1 - Registrar votos del Candidato A
     // Requisitos: Crear una función que sume o registre votos para el Candidato A.
     // ==========================================
-    
+
+    public static void registrarVotoCandidatoA(int cantidad) {
+        votosCandidatoA += cantidad;
+        System.out.println("Se registraron: " + votosCandidatoA + "votos para el candidato A");
+    }
 
     // ==========================================
     // TODO: DEV 2 - Registrar votos del Candidato B
     // Requisitos: Crear una función que sume o registre votos para el Candidato B.
+    // ======================================
+    public static void registrarVotoCandidatoB(int cantidad) {
+        votosCandidatoB += cantidad;
+        System.out.println("se registraron: " + votoscandidatoB + "votos para el candidato B");
+    }
     // ==========================================
-    
 
-    // ==========================================
     // TODO: DEV 3 - Calcular porcentajes
     // Requisitos: Crear una función que calcule y muestre el porcentaje de votos 
     // obtenido por cada candidato sobre el total de votos emitidos.
@@ -44,11 +51,20 @@ public class SimuladorVotacion {
     }
 
     // ==========================================
-    // TODO: DEV 4 - Determinar ganador
+    // TODO: DEV 4 - Determinar ganador - IMPLEMENTADO
     // Requisitos: Crear una función que compare los votos de ambos candidatos
     // y determine quién es el ganador o si se presenta un empate.
     // ==========================================
-    
+    public static void determinarGanador() {
+        if (votosCandidatoA > votosCandidatoB) {
+            System.out.println("¡El ganador es el Candidato A con " + votosCandidatoA + " votos!");
+        } else if (votosCandidatoB > votosCandidatoA) {
+            System.out.println("¡El ganador es el Candidato B con " + votosCandidatoB + " votos!");
+        } else {
+            System.out.println("Empate: Ambos candidatos tienen " + votosCandidatoA + " votos.");
+        }
+    }
+
 
     /**
      * Función Principal (Main)
@@ -85,12 +101,13 @@ public class SimuladorVotacion {
                     System.out.print("Ingrese cantidad de votos para Candidato A: ");
                     int votosA = scanner.nextInt();
                     // LLAMAR AQUÍ A LA FUNCIÓN REGISTRAR VOTOS CANDIDATO A
-                    
+                    registrarVotoCandidatoA(votosA);
                     break;
                 case 2:
                     System.out.print("Ingrese cantidad de votos para Candidato B: ");
                     int votosB = scanner.nextInt();
                     // LLAMAR AQUÍ A LA FUNCIÓN REGISTRAR VOTOS CANDIDATO B
+                    registrarVotoCandidatoB(votosB);
 
                     break;
                 case 3:
@@ -101,7 +118,7 @@ public class SimuladorVotacion {
                     break;
                 case 4:
                     // LLAMAR AQUÍ A LA FUNCIÓN DETERMINAR GANADOR
-
+                    determinarGanador();
                     break;
                 case 5:
                     salir = true;
