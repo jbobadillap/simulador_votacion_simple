@@ -147,8 +147,8 @@ Cada funcionalidad siguió el mismo ciclo:
 |------|----------------------------------|--------------------------------|------------------------------|
 | #1   | Alejandro Sarmiento Plata        | `feature/calcular-porcentajes` | Jose Camilo Bobadilla Puello |
 | #2   | Jose Camilo Bobadilla Puello     | `feature/ganador`              | Alejandro Sarmiento Plata    |
-| #3   | Gabriela Utria Jimenez           | `feature/votos-candidato-a`    | Maria Fernananda Vasquez Castro |
-| #4   | Maria Fernananda Vasquez Castro  | `feature/votos-candidato-b`    | Gabriela Utria Jimenez       |
+| #3   | Gabriela Utria Jimenez           | `feature/votos-candidato-a`    | Jose Camilo Bobadilla Puello |
+| #4   | Maria Fernananda Vasquez Castro  | `feature/votos-candidato-b`    | Jose Camilo Bobadilla Puello       |
 
 ### Detalle de cada Pull Request
 
