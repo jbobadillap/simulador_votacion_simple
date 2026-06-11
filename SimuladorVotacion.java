@@ -32,11 +32,20 @@ public class SimuladorVotacion {
     
 
     // ==========================================
-    // TODO: DEV 4 - Determinar ganador
+    // TODO: DEV 4 - Determinar ganador - IMPLEMENTADO
     // Requisitos: Crear una función que compare los votos de ambos candidatos
     // y determine quién es el ganador o si se presenta un empate.
     // ==========================================
-    
+    public static void determinarGanador() {
+        if (votosCandidatoA > votosCandidatoB) {
+            System.out.println("¡El ganador es el Candidato A con " + votosCandidatoA + " votos!");
+        } else if (votosCandidatoB > votosCandidatoA) {
+            System.out.println("¡El ganador es el Candidato B con " + votosCandidatoB + " votos!");
+        } else {
+            System.out.println("Empate: Ambos candidatos tienen " + votosCandidatoA + " votos.");
+        }
+    }
+
 
     /**
      * Función Principal (Main)
@@ -88,7 +97,7 @@ public class SimuladorVotacion {
                     break;
                 case 4:
                     // LLAMAR AQUÍ A LA FUNCIÓN DETERMINAR GANADOR
-
+                    determinarGanador();
                     break;
                 case 5:
                     salir = true;
