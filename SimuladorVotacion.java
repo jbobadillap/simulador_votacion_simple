@@ -33,7 +33,22 @@ public class SimuladorVotacion {
     // Requisitos: Crear una función que calcule y muestre el porcentaje de votos 
     // obtenido por cada candidato sobre el total de votos emitidos.
     // ==========================================
-    
+
+    public static void calcularPorcentajeCandidato(){
+        int totalVotos = votosCandidatoA + votosCandidatoB;
+
+        if (totalVotos == 0) {
+            System.out.println(" No hay votos registrados todavía.");
+            return;
+        }
+        double porcentajeA = (votosCandidatoA * 100.0) / totalVotos;
+        double porcentajeB = (votosCandidatoB * 100.0) / totalVotos;
+
+        System.out.println("\n--- Porcentajes de Votación ---");
+        System.out.printf("Porcentaje Candidato A: %.2f%%\n", porcentajeA);
+        System.out.printf("Porcentaje Candidato B: %.2f%%\n", porcentajeB);
+        System.out.println("Total de votos: " + totalVotos);
+    }
 
     // ==========================================
     // TODO: DEV 4 - Determinar ganador - IMPLEMENTADO
@@ -97,6 +112,8 @@ public class SimuladorVotacion {
                     break;
                 case 3:
                     // LLAMAR AQUÍ A LA FUNCIÓN CALCULAR PORCENTAJES
+                    System.out.print("ESTE ES EL RESULTADO DE LOS VOTOS: ");
+                    calcularPorcentajeCandidato();
 
                     break;
                 case 4:
