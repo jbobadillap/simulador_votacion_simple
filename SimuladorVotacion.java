@@ -10,31 +10,28 @@ public class SimuladorVotacion {
     private static int votosCandidatoB = 0;
 
     // ==========================================
-    // TODO: DEV 1 - Registrar votos del Candidato A
-    // Requisitos: Crear una función que sume o registre votos para el Candidato A.
+    // DEV 1 - Registrar votos del Candidato A
     // ==========================================
 
     public static void registrarVotoCandidatoA(int cantidad) {
         votosCandidatoA += cantidad;
-        System.out.println("Se registraron: " + votosCandidatoA + "votos para el candidato A");
+        System.out.println("Se registraron: " + votosCandidatoA + " votos para el candidato A");
     }
 
     // ==========================================
-    // TODO: DEV 2 - Registrar votos del Candidato B
-    // Requisitos: Crear una función que sume o registre votos para el Candidato B.
-    // ======================================
+    // DEV 2 - Registrar votos del Candidato B
+    // ==========================================
+
     public static void registrarVotoCandidatoB(int cantidad) {
         votosCandidatoB += cantidad;
-        System.out.println("se registraron: " + votoscandidatoB + "votos para el candidato B");
+        System.out.println("Se registraron: " + votosCandidatoB + " votos para el candidato B");
     }
+
+    // ==========================================
+    // DEV 3 - Calcular porcentajes
     // ==========================================
 
-    // TODO: DEV 3 - Calcular porcentajes
-    // Requisitos: Crear una función que calcule y muestre el porcentaje de votos 
-    // obtenido por cada candidato sobre el total de votos emitidos.
-    // ==========================================
-
-    public static void calcularPorcentajeCandidato(){
+    public static void calcularPorcentajes(){
         int totalVotos = votosCandidatoA + votosCandidatoB;
 
         if (totalVotos == 0) {
@@ -51,9 +48,7 @@ public class SimuladorVotacion {
     }
 
     // ==========================================
-    // TODO: DEV 4 - Determinar ganador - IMPLEMENTADO
-    // Requisitos: Crear una función que compare los votos de ambos candidatos
-    // y determine quién es el ganador o si se presenta un empate.
+    // DEV 4 - Determinar ganador
     // ==========================================
     public static void determinarGanador() {
         if (votosCandidatoA > votosCandidatoB) {
@@ -64,7 +59,6 @@ public class SimuladorVotacion {
             System.out.println("Empate: Ambos candidatos tienen " + votosCandidatoA + " votos.");
         }
     }
-
 
     /**
      * Función Principal (Main)
@@ -99,25 +93,38 @@ public class SimuladorVotacion {
             switch (opcion) {
                 case 1:
                     System.out.print("Ingrese cantidad de votos para Candidato A: ");
-                    int votosA = scanner.nextInt();
-                    // LLAMAR AQUÍ A LA FUNCIÓN REGISTRAR VOTOS CANDIDATO A
-                    registrarVotoCandidatoA(votosA);
+                    if (scanner.hasNextInt()) {
+                        int votosA = scanner.nextInt();
+                        if (votosA >= 0) {
+                            registrarVotoCandidatoA(votosA);
+                        } else {
+                            System.out.println("La cantidad de votos no puede ser negativa.");
+                        }
+                    } else {
+                        System.out.println("Por favor, ingrese un número válido.");
+                        scanner.next();
+                    }
                     break;
                 case 2:
                     System.out.print("Ingrese cantidad de votos para Candidato B: ");
-                    int votosB = scanner.nextInt();
-                    // LLAMAR AQUÍ A LA FUNCIÓN REGISTRAR VOTOS CANDIDATO B
-                    registrarVotoCandidatoB(votosB);
+                    if (scanner.hasNextInt()) {
+                        int votosB = scanner.nextInt();
+                        if (votosB >= 0) {
+                            registrarVotoCandidatoB(votosB);
+                        } else {
+                            System.out.println("La cantidad de votos no puede ser negativa.");
+                        }
+                    } else {
+                        System.out.println("Por favor, ingrese un número válido.");
+                        scanner.next();
+                    }
 
                     break;
                 case 3:
-                    // LLAMAR AQUÍ A LA FUNCIÓN CALCULAR PORCENTAJES
-                    System.out.print("ESTE ES EL RESULTADO DE LOS VOTOS: ");
-                    calcularPorcentajeCandidato();
+                    calcularPorcentajes();
 
                     break;
                 case 4:
-                    // LLAMAR AQUÍ A LA FUNCIÓN DETERMINAR GANADOR
                     determinarGanador();
                     break;
                 case 5:
